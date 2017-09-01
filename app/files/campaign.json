@@ -1,0 +1,42 @@
+﻿[
+  {
+    "SubCampaignCodeTypeKey": 1,
+    "ShortName": "90070",
+    "LongName": "90070",
+    "ShortDesc": "",
+    "LongDesc": "",
+    "Comments": "",
+    "ActiveFlag": "Y",
+    "SortOrder": 1
+  },
+  {
+    "SubCampaignCodeTypeKey": 2,
+    "ShortName": "98941",
+    "LongName": "98941",
+    "ShortDesc": "",
+    "LongDesc": "",
+    "Comments": "",
+    "ActiveFlag": "Y",
+    "SortOrder": 2
+  },
+  {
+    "SubCampaignCodeTypeKey": 3,
+    "ShortName": "88556",
+    "LongName": "88556",
+    "ShortDesc": "",
+    "LongDesc": "",
+    "Comments": "",
+    "ActiveFlag": "Y",
+    "SortOrder": 3
+  },
+  {
+    "SubCampaignCodeTypeKey": 4,
+    "ShortName": "78910",
+    "LongName": "10987",
+    "ShortDesc": "test",
+    "LongDesc": "test",
+    "Comments": "test",
+    "ActiveFlag": "Y",
+    "SortOrder": 4
+  }
+]

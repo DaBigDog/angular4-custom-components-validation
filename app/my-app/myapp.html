@@ -1,0 +1,78 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a routerLink="/" class="navbar-brand">Custom Components with Validation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+        </div>
+    </div>
+</div>
+
+
+<div class="container nav-pad">
+        <div class="row">
+            <div class="col-md-4">
+                <drop-down [types]="typesModel.StatesTypes" label="States" pkField="Id" textField="StateName" (onChange)="changeItem($event)"></drop-down>
+            </div>
+            <div class="col-md-4">
+                <drop-down [types]="typesModel.SubCampaignCodeTypes" label="Sub Campaign Code" pkField="SubCampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)"></drop-down>
+            </div>
+            <div class="col-md-4">
+                <drop-down [types]="typesModel.AdminTypes" [selectedItem]="dataModel.Admin" label="Admin Type" pkField="AdminId" textField="Administrator" (onChange)="changeItem($event)"></drop-down>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <multi-select-dropdown [types]="typesModel.StatesTypes" [selectedItems]="dataModel.States" label="States" pkField="Id" textField="StateName" (onChange)="changeItem($event)"></multi-select-dropdown>
+            </div>
+            <div class="col-md-4">
+                <multi-select-dropdown [types]="typesModel.SubCampaignCodeTypes" [selectedItems]="dataModel.SubCampaignCodes" label="Sub Campaign Code" pkField="SubCampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)"></multi-select-dropdown>
+            </div>
+            <div class="col-md-4">
+                <multi-select-dropdown [types]="typesModel.AdminTypes" [selectedItems]="dataModel.Admins" label="Admin Type" pkField="AdminId" textField="Administrator" allOption="true" (onChange)="changeItem($event)"></multi-select-dropdown>
+            </div>
+        </div>
+
+
+<hr />
+
+
+    <h2>Form Validation</h2>
+    <form #myForm="ngForm" (ngSubmit)="logForm(myForm)">
+        <div class="row">
+            <div class="col-md-4">
+                <multi-select-dropdown name="states" required ngModel [types]="typesModel.StatesTypes" [selectedItems]="dataModel.States" label="States" pkField="Id" textField="StateName" (onChange)="changeItem($event)" [isReadOnly]="readOnly"></multi-select-dropdown>
+                <validation-message controlName="states" [parentForm]="myForm" message="State"></validation-message>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" required ngModel class="form-control">
+                    <validation-message controlName="name" [parentForm]="myForm" message="Name"></validation-message>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input-control name="address" label="Address" required [(ngModel)]="myAddressModel" placeholderText="My Address" [isReadOnly]="readOnly"></input-control>
+                <validation-message controlName="address" [parentForm]="myForm" message="Address"></validation-message>
+            </div>
+            <div class="col-md-4">
+                <drop-down name="subCampaignCode" required ngModel [types]="typesModel.SubCampaignCodeTypes" label="Sub Campaign Code" pkField="SubCampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)" [isReadOnly]="readOnly"></drop-down>
+                <validation-message controlName="subCampaignCode" [parentForm]="myForm" message="Sub Campaign Code"></validation-message>
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-success" [disabled]="!myForm.form.valid">Submit</button>
+            <button type="submit" class="btn btn-success" (click)="readOnly = !readOnly">ReadOnly: {{readOnly}}</button>
+        </div>
+
+    </form>
+    <pre>Form Valid: {{ myForm.form.valid }}</pre>
+    <pre>{{ myForm.value | json }}</pre>
+</div>

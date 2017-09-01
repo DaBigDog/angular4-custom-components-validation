@@ -1,1 +1,8 @@
-# angular4-custom-components-validation
+# Angular 4 Custom Components with Validationnpm start
+
+
+
+```bash
+npm install
+npm start
+```
