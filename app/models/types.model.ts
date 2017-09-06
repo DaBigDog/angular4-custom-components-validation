@@ -2,12 +2,12 @@
 export class AppDataModel {
 
     public State: StateTypeModel;
-    public SubCampaignCode: SubCampaignCodeTypeModel;
+    public CampaignCode: CampaignCodeTypeModel;
     public Admin: AdminTypeModel;
 
 
     public States: StateTypeModel[] = new Array<StateTypeModel>();
-    public SubCampaignCodes: SubCampaignCodeTypeModel[] = new Array<SubCampaignCodeTypeModel>();
+    public CampaignCodes: CampaignCodeTypeModel[] = new Array<CampaignCodeTypeModel>();
     public Admins: AdminTypeModel[] = new Array<AdminTypeModel>();
 
 }
@@ -18,7 +18,7 @@ export class AppDataModel {
 export class TypesModel {
 
     public StatesTypes: StateTypeModel[] = new Array<StateTypeModel>();
-    public SubCampaignCodeTypes: SubCampaignCodeTypeModel[] = new Array<SubCampaignCodeTypeModel>();
+    public CampaignCodeTypes: CampaignCodeTypeModel[] = new Array<CampaignCodeTypeModel>();
     public AdminTypes: AdminTypeModel[] = new Array<AdminTypeModel>();
 
 }
@@ -45,8 +45,8 @@ export class StateTypeModel {
     StateName: string;
 }
 
-export class SubCampaignCodeTypeModel extends BaseTypeModel {
-    SubCampaignCodeTypeKey: number;
+export class CampaignCodeTypeModel extends BaseTypeModel {
+    CampaignCodeTypeKey: number;
 }
 
 export class AdminTypeModel {

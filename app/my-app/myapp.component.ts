@@ -2,7 +2,7 @@
 import { FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms';
 
 import { ApiDataService } from '../services/data.service'
-import { AppDataModel, TypesModel, StateTypeModel, AdminTypeModel, SubCampaignCodeTypeModel } from '../models/types.model';
+import { AppDataModel, TypesModel, StateTypeModel, AdminTypeModel, CampaignCodeTypeModel } from '../models/types.model';
 
 @Component({
     selector: 'my-app',
@@ -41,10 +41,10 @@ export class MyAppComponent {
 
         this.dataService.getSubCampaignCodeTypes().subscribe(
             data => { // success
-                this.typesModel.SubCampaignCodeTypes = data;
+                this.typesModel.CampaignCodeTypes = data;
 
-                if (undefined === this.dataModel.SubCampaignCodes) {
-                    this.dataModel.SubCampaignCodes = new Array<SubCampaignCodeTypeModel>();
+                if (undefined === this.dataModel.CampaignCodes) {
+                    this.dataModel.CampaignCodes = new Array<SubCampaignCodeTypeModel>();
                 }
   //              this.dataModel.SubCampaignCodes = this.typesModel.SubCampaignCodeTypes.filter(x => x.SubCampaignCodeTypeKey > 1);
             },

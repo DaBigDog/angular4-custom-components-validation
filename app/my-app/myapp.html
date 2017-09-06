@@ -20,7 +20,7 @@
                 <drop-down [types]="typesModel.StatesTypes" label="States" pkField="Id" textField="StateName" (onChange)="changeItem($event)"></drop-down>
             </div>
             <div class="col-md-4">
-                <drop-down [types]="typesModel.SubCampaignCodeTypes" label="Sub Campaign Code" pkField="SubCampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)"></drop-down>
+                <drop-down [types]="typesModel.CampaignCodeTypes" label="Campaign Code" pkField="CampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)"></drop-down>
             </div>
             <div class="col-md-4">
                 <drop-down [types]="typesModel.AdminTypes" [selectedItem]="dataModel.Admin" label="Admin Type" pkField="AdminId" textField="Administrator" (onChange)="changeItem($event)"></drop-down>
@@ -31,7 +31,7 @@
                 <multi-select-dropdown [types]="typesModel.StatesTypes" [selectedItems]="dataModel.States" label="States" pkField="Id" textField="StateName" (onChange)="changeItem($event)"></multi-select-dropdown>
             </div>
             <div class="col-md-4">
-                <multi-select-dropdown [types]="typesModel.SubCampaignCodeTypes" [selectedItems]="dataModel.SubCampaignCodes" label="Sub Campaign Code" pkField="SubCampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)"></multi-select-dropdown>
+                <multi-select-dropdown [types]="typesModel.CampaignCodeTypes" [selectedItems]="dataModel.CampaignCodes" label="Campaign Code" pkField="CampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)"></multi-select-dropdown>
             </div>
             <div class="col-md-4">
                 <multi-select-dropdown [types]="typesModel.AdminTypes" [selectedItems]="dataModel.Admins" label="Admin Type" pkField="AdminId" textField="Administrator" allOption="true" (onChange)="changeItem($event)"></multi-select-dropdown>
@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-md-4">
                 <multi-select-dropdown name="states" required ngModel [types]="typesModel.StatesTypes" [selectedItems]="dataModel.States" label="States" pkField="Id" textField="StateName" (onChange)="changeItem($event)" [isReadOnly]="readOnly"></multi-select-dropdown>
-                <validation-message controlName="states" [parentForm]="myForm" message="State"></validation-message>
+                <validation-message controlName="states" [parentForm]="myForm" message="State" *ngIf="!readOnly"></validation-message>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
@@ -60,16 +60,17 @@
         <div class="row">
             <div class="col-md-4">
                 <input-control name="address" label="Address" required [(ngModel)]="myAddressModel" placeholderText="My Address" [isReadOnly]="readOnly"></input-control>
-                <validation-message controlName="address" [parentForm]="myForm" message="Address"></validation-message>
+                <validation-message controlName="address" [parentForm]="myForm" message="Address" *ngIf="!readOnly"></validation-message>
             </div>
             <div class="col-md-4">
-                <drop-down name="subCampaignCode" required ngModel [types]="typesModel.SubCampaignCodeTypes" label="Sub Campaign Code" pkField="SubCampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)" [isReadOnly]="readOnly"></drop-down>
-                <validation-message controlName="subCampaignCode" [parentForm]="myForm" message="Sub Campaign Code"></validation-message>
+                <drop-down name="campaignCode" required ngModel [types]="typesModel.CampaignCodeTypes" label="Campaign Code" pkField="CampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)" [isReadOnly]="readOnly"></drop-down>
+                <validation-message controlName="campaignCode" [parentForm]="myForm" message="Campaign Code" *ngIf="!readOnly"></validation-message>
             </div>
         </div>
         <div class="row">
-            <button type="submit" class="btn btn-success" [disabled]="!myForm.form.valid">Submit</button>
-            <button type="submit" class="btn btn-success" (click)="readOnly = !readOnly">ReadOnly: {{readOnly}}</button>
+            <button type="button" class="btn btn-success" (click)="readOnly = !readOnly">ReadOnly: {{readOnly}}</button>
+            <button type="submit" class="btn btn-success" [disabled]="!myForm.form.valid" *ngIf="!readOnly">Submit</button>
+            <button type="submit" class="btn btn-success" *ngIf="!readOnly">Submit</button>
         </div>
 
     </form>
