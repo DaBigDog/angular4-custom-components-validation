@@ -6,7 +6,7 @@
     "ShortDesc": "",
     "LongDesc": "",
     "Comments": "",
-    "ActiveFlag": "Y",
+    "ActiveFlag": true,
     "SortOrder": 1
   },
   {
@@ -16,7 +16,7 @@
     "ShortDesc": "",
     "LongDesc": "",
     "Comments": "",
-    "ActiveFlag": "Y",
+    "ActiveFlag": true,
     "SortOrder": 2
   },
   {
@@ -26,7 +26,7 @@
     "ShortDesc": "",
     "LongDesc": "",
     "Comments": "",
-    "ActiveFlag": "Y",
+    "ActiveFlag": true,
     "SortOrder": 3
   },
   {
@@ -36,7 +36,7 @@
     "ShortDesc": "test",
     "LongDesc": "test",
     "Comments": "test",
-    "ActiveFlag": "Y",
+    "ActiveFlag": true,
     "SortOrder": 4
   }
 ]

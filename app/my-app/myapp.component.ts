@@ -39,14 +39,13 @@ export class MyAppComponent {
             });
 
 
-        this.dataService.getSubCampaignCodeTypes().subscribe(
+        this.dataService.getCampaignCodeTypes().subscribe(
             data => { // success
                 this.typesModel.CampaignCodeTypes = data;
 
                 if (undefined === this.dataModel.CampaignCodes) {
-                    this.dataModel.CampaignCodes = new Array<SubCampaignCodeTypeModel>();
+                    this.dataModel.CampaignCodes = new Array<CampaignCodeTypeModel>();
                 }
-  //              this.dataModel.SubCampaignCodes = this.typesModel.SubCampaignCodeTypes.filter(x => x.SubCampaignCodeTypeKey > 1);
             },
             error => { // error
                 console.log(error);

@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 
 
 import {
-    StateTypeModel, SubCampaignCodeTypeModel, AdminTypeModel
+    StateTypeModel, CampaignCodeTypeModel, AdminTypeModel
 } from '../models/types.model';
 
 
@@ -29,7 +29,7 @@ export class ApiDataService {
             });
     }
 
-    public getSubCampaignCodeTypes(): Observable<SubCampaignCodeTypeModel[]> {
+    public getCampaignCodeTypes(): Observable<CampaignCodeTypeModel[]> {
         return this.http.get("app/files/campaign.json")
             .map((res: any) => res.json())
             .catch((error: Response | any, caught: Observable<any>): Observable<any> => {
