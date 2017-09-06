@@ -1,0 +1,50 @@
+﻿[
+  {
+    "AdminId": 1,
+    "AdministratorNBK": "NBK7YY4",
+    "Administrator": "Lisa Beedle",
+    "SortOrder": null,
+    "ArchiveRow": 0,
+    "ActiveFlag": true
+  },
+  {
+    "AdminId": 2,
+    "AdministratorNBK": "NSD9IAA",
+    "Administrator": "Larry Bell",
+    "SortOrder": null,
+    "ArchiveRow": 0,
+    "ActiveFlag": true
+  },
+  {
+    "AdminId": 3,
+    "AdministratorNBK": "ZKAS16Z",
+    "Administrator": "Maria Muntz",
+    "SortOrder": null,
+    "ArchiveRow": 0,
+    "ActiveFlag": true
+  },
+  {
+    "AdminId": 4,
+    "AdministratorNBK": "NBZZLZA",
+    "Administrator": "Kelly Conway",
+    "SortOrder": null,
+    "ArchiveRow": 0,
+    "ActiveFlag": true
+  },
+  {
+    "AdminId": 5,
+    "AdministratorNBK": "NBK8I4T",
+    "Administrator": "Lou Walt",
+    "SortOrder": null,
+    "ArchiveRow": 0,
+    "ActiveFlag": true
+  },
+  {
+    "AdminId": 6,
+    "AdministratorNBK": "NBK89OPK",
+    "Administrator": "Joe Martinez",
+    "SortOrder": null,
+    "ArchiveRow": 0,
+    "ActiveFlag": true
+  }
+]

@@ -1,0 +1,5 @@
+﻿<div *ngIf="isInvalid" class="alert alert-danger">
+    <div *ngIf="control.errors.required">
+        {{ errorMessage }}
+    </div>
+</div>
