@@ -1,4 +1,4 @@
-# Angular 4 Custom Components with Validationnpm start
+# Angular 4 Custom Components with Validation
 
 
 
