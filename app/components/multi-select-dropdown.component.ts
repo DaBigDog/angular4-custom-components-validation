@@ -80,7 +80,7 @@ export class MultiSelectDropDownComponent extends BaseControlValueAccessor {
                 this.selectedItems.splice(i, 1);
             }
         }
-        this.propagateChange(this.selectedItems); // must propagate changes to the form!
+        this.onChangeCallback(this.selectedItems); // must propagate changes to the form!
         this.onChange.emit(this.selectedItems); // notify listeners of change and send new objects
 
         return false;

@@ -3,8 +3,8 @@ import { ControlValueAccessor } from '@angular/forms';
 
 export abstract class BaseControlValueAccessor implements ControlValueAccessor { 
 
-    @Input() public isReadOnly: boolean = false;
-    @Output() public onChange: EventEmitter<any> = new EventEmitter<any>();
+    @Input() public isReadOnly: boolean = false; // disabled or readonly mode
+    @Output() public onChange: EventEmitter<any> = new EventEmitter<any>(); // listeners notified of value change
 
     //**************  ControlValueAccessor Methods ****************
 
@@ -12,13 +12,20 @@ export abstract class BaseControlValueAccessor implements ControlValueAccessor {
         console.log(value);
     }
 
-    public propagateChange = (_: any) => { };
+    public onChangeCallback = (_: any) => { };
 
     public registerOnChange(fn: any) {
-        this.propagateChange = fn;
+        this.onChangeCallback = fn;
     }
 
-    public registerOnTouched(fn: any) { }
+
+    public onTouchedCallback = (_: any) => { };
+
+    public registerOnTouched(fn: any) { 
+        this.onTouchedCallback = fn;
+    }
+
+
 
     public setDisabledState(isDisabled?: boolean): void {
 

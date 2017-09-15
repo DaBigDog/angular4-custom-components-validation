@@ -57,7 +57,7 @@ export class DropDownComponent extends BaseControlValueAccessor {
     private selectItem(item: any): boolean {
         if (!this.isReadOnly) {
             this.selectedItem = item;
-            this.propagateChange(item);
+            this.onChangeCallback(item);
             this.onChange.emit(item);
         }
         return false;

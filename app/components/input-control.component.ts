@@ -11,7 +11,7 @@ import { BaseControlValueAccessor } from './base-control-value-accessor'
     selector: 'input-control'
     , template: '<div class="form-group">' +
     '<label>{{ label }}</label>'+
-    '<input type="text" [(ngModel)]="value" spellcheck="true" placeholder="{{ placeholderText }}" class="form-control"  *ngIf="!isReadOnly"/> ' +
+    '<input type="text" [(ngModel)]="value" spellcheck="true" placeholder="{{ placeholderText }}" class="form-control" *ngIf="!isReadOnly" (blur)="onTouchedCallback($event)"/> ' +
     '<div class="pre-scrollable scroll-height" [innerHTML]="valueText" *ngIf="isReadOnly"></div>'+
     '</div>'
     , styles: ["div.scroll-height { max-height: 100px !important; overflow-y: scroll;}"]
@@ -68,7 +68,7 @@ export class InputControlComponent extends BaseControlValueAccessor  {
     public set value(v: any) {
         if (v !== this.innerValue) {
             this.innerValue = v;
-            this.propagateChange(v);
+            this.onChangeCallback(v);
         }
     }
 
