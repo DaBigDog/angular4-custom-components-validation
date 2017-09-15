@@ -12,36 +12,7 @@
         </div>
     </div>
 </div>
-
-
-<div class="container nav-pad">
-        <div class="row">
-            <div class="col-md-4">
-                <drop-down [types]="typesModel.StatesTypes" label="States" pkField="Id" textField="StateName" (onChange)="changeItem($event)"></drop-down>
-            </div>
-            <div class="col-md-4">
-                <drop-down [types]="typesModel.CampaignCodeTypes" label="Campaign Code" pkField="CampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)"></drop-down>
-            </div>
-            <div class="col-md-4">
-                <drop-down [types]="typesModel.AdminTypes" [selectedItem]="dataModel.Admin" label="Admin Type" pkField="AdminId" textField="Administrator" (onChange)="changeItem($event)"></drop-down>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <multi-select-dropdown [types]="typesModel.StatesTypes" [selectedItems]="dataModel.States" label="States" pkField="Id" textField="StateName" (onChange)="changeItem($event)"></multi-select-dropdown>
-            </div>
-            <div class="col-md-4">
-                <multi-select-dropdown [types]="typesModel.CampaignCodeTypes" [selectedItems]="dataModel.CampaignCodes" label="Campaign Code" pkField="CampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)"></multi-select-dropdown>
-            </div>
-            <div class="col-md-4">
-                <multi-select-dropdown [types]="typesModel.AdminTypes" [selectedItems]="dataModel.Admins" label="Admin Type" pkField="AdminId" textField="Administrator" allOption="true" (onChange)="changeItem($event)"></multi-select-dropdown>
-            </div>
-        </div>
-
-
-<hr />
-
-
+ <div class="container nav-pad">
     <h2>Form Validation</h2>
     <form #myForm="ngForm" (ngSubmit)="logForm(myForm)">
         <div class="row">
@@ -51,7 +22,7 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Name (plain input element)</label>
                     <input type="text" name="name" required ngModel class="form-control">
                     <validation-message controlName="name" [parentForm]="myForm" message="Name"></validation-message>
                 </div>
@@ -77,3 +48,30 @@
     <pre>Form Valid: {{ myForm.form.valid }}</pre>
     <pre>{{ myForm.value | json }}</pre>
 </div>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <drop-down [types]="typesModel.StatesTypes" label="States" pkField="Id" textField="StateName" (onChange)="changeItem($event)"></drop-down>
+        </div>
+        <div class="col-md-4">
+            <drop-down [types]="typesModel.CampaignCodeTypes" label="Campaign Code" pkField="CampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)"></drop-down>
+        </div>
+        <div class="col-md-4">
+            <drop-down [types]="typesModel.AdminTypes" [selectedItem]="dataModel.Admin" label="Admin Type" pkField="AdminId" textField="Administrator" (onChange)="changeItem($event)"></drop-down>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <multi-select-dropdown [types]="typesModel.StatesTypes" [selectedItems]="dataModel.States" label="States" pkField="Id" textField="StateName" (onChange)="changeItem($event)"></multi-select-dropdown>
+        </div>
+        <div class="col-md-4">
+            <multi-select-dropdown [types]="typesModel.CampaignCodeTypes" [selectedItems]="dataModel.CampaignCodes" label="Campaign Code" pkField="CampaignCodeTypeKey" textField="ShortName" (onChange)="changeItem($event)"></multi-select-dropdown>
+        </div>
+        <div class="col-md-4">
+            <multi-select-dropdown [types]="typesModel.AdminTypes" [selectedItems]="dataModel.Admins" label="Admin Type" pkField="AdminId" textField="Administrator" allOption="true" (onChange)="changeItem($event)"></multi-select-dropdown>
+        </div>
+    </div>
+
+</div>
+
