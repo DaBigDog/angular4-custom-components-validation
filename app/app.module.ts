@@ -13,13 +13,15 @@ import { ValidationMessageComponent } from './components/validation-message.comp
 
 import { ApiDataService } from './services/data.service'
 
+import { ClickOutsideDirective } from './directives/click-outside.directive'
+
 
 @NgModule({
     imports: [BrowserModule, HttpModule, JsonpModule,
         FormsModule
     ],
     declarations: [MyAppComponent, DropDownComponent, MultiSelectDropDownComponent, InputControlComponent
-        , ValidationMessageComponent],
+        , ValidationMessageComponent, ClickOutsideDirective],
     providers: [ApiDataService],
     bootstrap: [MyAppComponent]
 })
