@@ -1,8 +1,8 @@
 ﻿<div class="form-group">
     <label *ngIf="label">{{label}}</label>
     <div class="form-group">
-        <div class="btn-group" *ngIf="!isReadOnly">
-            <button type="button" class="btn btn-default dropdown-toggle btn-wrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (blur)="onTouchedCallback($event)">
+        <div class="btn-group" *ngIf="!isReadOnly" click-outside (onClickOutside)="onTouchedCallback($event)">
+            <button type="button" class="btn btn-default dropdown-toggle btn-wrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ selectedItemTextList }} <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" *ngIf="types">
